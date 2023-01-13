@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Hero from "../components/Hero";
+import Sidebar from "../components/Sidebar";
 
 export default function Home() {
   return (
@@ -6,7 +8,10 @@ export default function Home() {
       <Head>
         <title>CryptoDash</title>
       </Head>
-      <h1 className="text-3xl text-blue-600">CryptoDash</h1>
+      <div className="flex flex-col sm:flex-row">
+        <Sidebar />
+        <Hero />
+      </div>
     </>
   );
 }
