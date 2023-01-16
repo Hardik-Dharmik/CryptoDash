@@ -7,7 +7,7 @@ import SideBarOption from "./SideBarOption";
 function Sidebar() {
   return (
     <div>
-      <div className="hidden sm:flex flex-col min-h-screen bg-[#3a4352] max-w-[300px] md:min-w-[170px]">
+      <div className="hidden sm:flex flex-col min-h-screen bg-[#3a4352] max-w-[300px] md:min-w-[170px] h-full">
         <div className="flex items-center justify-evenly py-2 bg-[#2d3645]">
           <Image
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/1200px-Bitcoin.svg.png"
