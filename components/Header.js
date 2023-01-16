@@ -9,7 +9,7 @@ function Header() {
     <div className="flex items-center justify-between bg-white">
       <div className="flex items-center">
         <MenuIcon
-          className="mx-2 hover:bg-gray-200 rounded-full h-8 w-8 p-2 cursor-pointer "
+          className="mx-2  rounded-full h-6 w-6 hover:text-gray-400  cursor-pointer "
           fontSize="small"
         />
         <div className="flex items-center bg-gray-300 rounded-lg text-sm">
@@ -22,11 +22,11 @@ function Header() {
         </div>
       </div>
       <div className="py-2 flex items-center space-x-1 mr-3">
-        <EmailIcon className="mx-2 text-gray-600 hover:bg-gray-200 rounded-full h-9 w-9 p-2 cursor-pointer" />
+        <EmailIcon className="mx-2 text-gray-600  rounded-full h-6 w-6 hover:text-gray-400  cursor-pointer" />
 
-        <NotificationsIcon className="mx-2 text-gray-600 hover:bg-gray-200 rounded-full h-9 w-9 p-2 cursor-pointer" />
+        <NotificationsIcon className="mx-2 text-gray-600  rounded-full h-6 w-6 hover:text-gray-400  cursor-pointer" />
 
-        <SettingsIcon className="mx-2 text-gray-600 hover:bg-gray-200 rounded-full h-9 w-9 p-2 cursor-pointer" />
+        <SettingsIcon className="mx-2 text-gray-600  rounded-full h-6 w-6 hover:text-gray-400  cursor-pointer" />
       </div>
     </div>
   );
