@@ -1,30 +1,27 @@
-import React from "react";
-import { coins } from "../saved_responses/listOfCoins";
-import { sortDataByPrice } from "../utils";
+import { history } from "../saved_responses/history";
+import { prepareData } from "../utils";
+import LineGraph from "./LineGraph";
 
 function Graph() {
-  const sortedData = sortDataByPrice(coins.data.coins);
-
+  const { labels, values } = prepareData(history.data.history);
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "BTC",
+        data: values,
+        borderColor: "rgba(142, 200, 188, 1)",
+        backgroundColor: "rgba(142, 200, 188, 1)",
+        pointColor: "rgba(151,187,205,1)",
+        fill: true,
+        radius: 2,
+      },
+    ],
+  };
+  console.log(labels);
   return (
-    <div className="h-72 overflow-hidden">
-      <table className="border-2 border-gray-200 bg-white w-2/6 ml-2 ">
-        <thead className="">
-          <tr>
-            <th className="py-3 ">Coins</th>
-            <th className="py-3 ">Price ($)</th>
-            <th className="py-3 ">Change</th>
-          </tr>
-        </thead>
-        <tbody className="text-center">
-          {sortedData.map((coin) => (
-            <tr className="hover:bg-gray-300 cursor-pointer">
-              <td className="py-3 px-6">{coin.name}</td>
-              <td className="py-3 px-6">{coin.price}</td>
-              <td className="py-3 px-6 text-blue-600">{coin.change}%</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="h-1/2 w-1/2 bg-white mx-auto">
+      <LineGraph data={data} />
     </div>
   );
 }

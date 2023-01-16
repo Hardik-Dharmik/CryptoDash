@@ -8,7 +8,7 @@ export default function Home() {
       <Head>
         <title>CryptoDash</title>
       </Head>
-      <div className="flex flex-col sm:flex-row bg-gray-100">
+      <div className="flex flex-col sm:flex-row bg-gray-100 overflow-x-hidden-hidden">
         <Sidebar />
         <Hero />
       </div>

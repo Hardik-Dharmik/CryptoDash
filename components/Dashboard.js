@@ -9,7 +9,7 @@ function Dashboard() {
   return (
     <div className="p-4">
       <div className="pt-2">
-        <h1 className="text-xl">Top Cryptocurrencies</h1>
+        <h1 className="text-xl ml-2">Top Cryptocurrencies</h1>
         <div className="flex flex-wrap items-center justify-between my-4  ">
           {top4.coins.map((coin, index) => (
             <Currency
