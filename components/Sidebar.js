@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import CurrencyBitcoinIcon from "@mui/icons-material/CurrencyBitcoin";
 import ArticleIcon from "@mui/icons-material/Article";
@@ -22,16 +23,22 @@ function Sidebar() {
         </div>
 
         <div className="flex flex-col text-sm items-start  space-y-7 p-3 pt-5 !text-white">
-          <SideBarOption Icon={DashboardIcon} option="Dashboard" />
-          <SideBarOption Icon={CurrencyBitcoinIcon} option="Currencies" />
-          <SideBarOption Icon={ArticleIcon} option="News" />
+          <Link href="/">
+            <SideBarOption Icon={DashboardIcon} option="Dashboard" />
+          </Link>
+          <Link href="/currency">
+            <SideBarOption Icon={CurrencyBitcoinIcon} option="Currencies" />
+          </Link>
+          <Link href="/news">
+            <SideBarOption Icon={ArticleIcon} option="News" />
+          </Link>
         </div>
       </div>
 
       <div className="flex sm:hidden justify-evenly bg-red-400 p-2">
-        <a href="">Dashboard</a>
-        <a href="">Currencies</a>
-        <a href="">News</a>
+        <Link href="/">Dashboard</Link>
+        <Link href="/currency">Currencies</Link>
+        <Link href="/news">News</Link>
       </div>
     </div>
   );

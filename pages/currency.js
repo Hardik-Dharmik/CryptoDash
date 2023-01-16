@@ -2,7 +2,7 @@ import Head from "next/head";
 import Hero from "../components/Hero";
 import Sidebar from "../components/Sidebar";
 
-export default function Home() {
+export default function Currency() {
   return (
     <>
       <Head>
@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
       <div className="flex flex-col sm:flex-row bg-gray-100">
         <Sidebar />
-        <Hero />
+        <h1>Currency</h1>
       </div>
     </>
   );

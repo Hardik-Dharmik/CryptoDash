@@ -31,6 +31,22 @@ const options = {
     title: {
       display: true,
       text: "Bitcoin Prices",
+      font: {
+        size: 20,
+        color: "#000",
+      },
+    },
+  },
+  scales: {
+    x: {
+      grid: {
+        display: false,
+      },
+    },
+    y: {
+      grid: {
+        display: false,
+      },
     },
   },
 };

@@ -3,7 +3,7 @@ import { coins } from "../saved_responses/listOfCoins";
 import { sortDataByName, sortDataByPrice } from "../utils";
 
 function Table1() {
-  const sortedData = sortDataByName(coins.data.coins).slice(0, 5);
+  const sortedData = sortDataByPrice(coins.data.coins).slice(0, 5);
 
   return (
     <div className="h-fit max-w-lg">
