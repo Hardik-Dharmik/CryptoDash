@@ -3,7 +3,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import EmailIcon from "@mui/icons-material/Email";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SettingsIcon from "@mui/icons-material/Settings";
-import { Avatar } from "@mui/material";
+
 function Header() {
   return (
     <div className="flex items-center justify-between bg-white">

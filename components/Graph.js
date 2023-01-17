@@ -8,18 +8,18 @@ function Graph() {
     labels,
     datasets: [
       {
-        label: "BTC ($)",
+        label: "In USD",
         data: values,
         borderColor: "rgba(142, 200, 188, 1)",
-        backgroundColor: "rgba(142, 200, 188, 1)",
+        // backgroundColor: "rgba(142, 200, 188, 1)",
         pointColor: "rgba(151,187,205,1)",
-        fill: true,
+        // fill: true,
         radius: 2,
       },
     ],
   };
   return (
-    <div className="h-1/2 w-1/2 bg-white mx-auto">
+    <div className="shadow-md sm:h-1/2 sm:w-1/2 bg-white mx-auto h-full w-full">
       <LineGraph data={data} />
     </div>
   );

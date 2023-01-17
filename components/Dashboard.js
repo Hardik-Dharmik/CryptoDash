@@ -19,6 +19,7 @@ function Dashboard() {
               price={coin.price}
               iconUrl={coin.iconUrl}
               bgColor={cardbgColor[index]}
+              coinId={coin.uuid}
             />
           ))}
         </div>

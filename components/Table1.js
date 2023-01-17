@@ -6,7 +6,7 @@ function Table1() {
   const sortedData = sortDataByPrice(coins.data.coins).slice(0, 5);
 
   return (
-    <div className="h-fit max-w-lg">
+    <div className="h-fit max-w-lg shadow-lg">
       <table className="border-2 border-gray-200 bg-white w-2/6 ml-2 ">
         <thead className="">
           <tr>

@@ -9,6 +9,7 @@ import {
   Legend,
   Filler,
 } from "chart.js";
+import { useRef } from "react";
 import { Line } from "react-chartjs-2";
 
 ChartJS.register(
@@ -30,7 +31,7 @@ const options = {
     },
     title: {
       display: true,
-      text: "Bitcoin Prices",
+      text: "Bitcoin Price",
       font: {
         size: 20,
         color: "#000",
@@ -50,9 +51,10 @@ const options = {
     },
   },
 };
+
 function LineGraph({ data }) {
   return (
-    <div>
+    <div className="flex items-center justify-center">
       <Line options={options} data={data} />
     </div>
   );
