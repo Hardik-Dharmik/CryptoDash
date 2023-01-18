@@ -23,38 +23,37 @@ ChartJS.register(
   Filler
 );
 
-const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "top",
-    },
-    title: {
-      display: true,
-      text: "Bitcoin Price",
-      font: {
-        size: 20,
-        color: "#000",
+function LineGraph({ data, isBitcoin, detailed }) {
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: isBitcoin,
+        text: "Bitcoin Price (1yr)",
+        font: {
+          size: 20,
+          color: "#000",
+        },
       },
     },
-  },
-  scales: {
-    x: {
-      grid: {
-        display: false,
+    scales: {
+      x: {
+        grid: {
+          display: false,
+        },
+      },
+      y: {
+        grid: {
+          display: false,
+        },
       },
     },
-    y: {
-      grid: {
-        display: false,
-      },
-    },
-  },
-};
-
-function LineGraph({ data }) {
+  };
   return (
-    <div className="flex items-center justify-center">
+    <div className={`flex items-center justify-center w-full`}>
       <Line options={options} data={data} />
     </div>
   );

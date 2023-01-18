@@ -46,10 +46,10 @@ function CoinInformation({ coinId, coinData }) {
           {/* Name  */}
           <div className=" ">
             {/* Name & Price  */}
-            <div className="flex w-2/3 justify-between">
+            <div className="flex flex-col md:flex-row w-2/3 justify-between">
               {/* Name, Price, Price at, Change */}
               <h1 className="text-5xl ">{coinData.name}</h1>
-              <div className="flex flex-col items-end">
+              <div className="flex flex-col md:items-end">
                 <p className="text-2xl">
                   $ {parseFloat(coinData.price).toFixed(3)}{" "}
                 </p>
@@ -71,7 +71,7 @@ function CoinInformation({ coinId, coinData }) {
               </div>
             </div>
 
-            <div className="flex text-xl my-4">
+            <div className="flex flex-col md:flex-row text-xl my-4">
               {/* Website  */}
               <a
                 className="mr-5 text-blue-500 flex items-center"
@@ -87,7 +87,7 @@ function CoinInformation({ coinId, coinData }) {
 
           {/* More Info  */}
           <div>
-            <div className="grid grid-cols-3 gap-4 gap-y-5 border border-gray-300 p-4 rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-5 border border-gray-300 p-4 rounded-lg">
               {moreInformation.map((info) => (
                 <div className="flex justify-between bg-gray-100 p-2">
                   <p className="text-gray-600">{info.term}</p>
@@ -99,7 +99,7 @@ function CoinInformation({ coinId, coinData }) {
         </div>
 
         {/* Icon  */}
-        <div className="flex flex-col items-center justify-between">
+        <div className="hidden md:flex flex-col items-center justify-between">
           <img src={coinData.iconUrl} alt="" className="h-20 w-20" />
           <h1 className="font-bold">Reference Links</h1>
           {coinData.links.slice(0, 4).map((link) => (
@@ -111,7 +111,7 @@ function CoinInformation({ coinId, coinData }) {
       </div>
 
       {/* Graph  */}
-      <div className="flex p-4 flex-grow mt-5 ">
+      <div className="hidden md:flex p-4 flex-grow mt-5 ">
         <DetailedGraph />
       </div>
     </div>

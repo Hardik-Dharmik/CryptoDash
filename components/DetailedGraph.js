@@ -24,7 +24,7 @@ function DetailedGraph() {
     labels,
     datasets: [
       {
-        label: "BTC ($)",
+        label: "IN ($)",
         data: values,
         borderColor: "rgba(142, 200, 188, 1)",
         radius: 2,
@@ -116,7 +116,7 @@ function DetailedGraph() {
           5y
         </button>
       </div>
-      <LineGraph data={data} />
+      <LineGraph data={data} detailed />
     </div>
   );
 }

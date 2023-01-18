@@ -29,16 +29,20 @@ function Sidebar() {
           <Link href="/currency">
             <SideBarOption Icon={CurrencyBitcoinIcon} option="Currencies" />
           </Link>
-          <Link href="/news">
-            <SideBarOption Icon={ArticleIcon} option="News" />
-          </Link>
+          <a href="https://www.ft.com/cryptofinance">
+            <SideBarOption
+              Icon={ArticleIcon}
+              option="News"
+              href="https://www.ft.com/cryptofinance"
+            />
+          </a>
         </div>
       </div>
 
-      <div className="flex sm:hidden justify-evenly bg-red-400 p-2">
+      <div className="flex sm:hidden justify-evenly bg-[#3a4352] text-white">
         <Link href="/">Dashboard</Link>
         <Link href="/currency">Currencies</Link>
-        <Link href="/news">News</Link>
+        <Link href="https://www.ft.com/cryptofinance">News</Link>
       </div>
     </div>
   );

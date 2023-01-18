@@ -14,7 +14,23 @@ export default function Currency() {
   };
 
   useEffect(() => {
-    setData(coins.data.coins);
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "65744594aemsh608ea4b0ebc9750p1f84c5jsn5b64bc01da4e",
+        "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+      },
+    };
+
+    fetch(
+      "https://coinranking1.p.rapidapi.com/coins?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h&tiers%5B0%5D=1&orderBy=marketCap&orderDirection=desc&limit=50&offset=0",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        setData(response.data.coins);
+      })
+      .catch((err) => console.error(err));
   }, []);
 
   return (

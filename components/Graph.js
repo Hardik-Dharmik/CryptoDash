@@ -1,9 +1,14 @@
 import { history } from "../saved_responses/history";
 import { prepareData } from "../utils";
 import LineGraph from "./LineGraph";
+import useTimelyData from "../hooks/useTimelyData";
 
 function Graph() {
-  const { labels, values } = prepareData(history.data.history);
+  const [history] = useTimelyData("1y", "Qwsogvtv82FCd");
+  if (!history) {
+    return null;
+  }
+  const { labels, values } = prepareData(history?.data?.history);
   const data = {
     labels,
     datasets: [
@@ -20,7 +25,7 @@ function Graph() {
   };
   return (
     <div className="shadow-md sm:h-1/2 sm:w-1/2 bg-white mx-auto h-full w-full">
-      <LineGraph data={data} />
+      <LineGraph data={data} isBitcoin />
     </div>
   );
 }

@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { coins } from "../saved_responses/listOfCoins";
 import { sortDataByName, sortDataByPrice } from "../utils";
+import { useRouter } from "next/router";
 
-function Table1() {
-  const sortedData = sortDataByPrice(coins.data.coins).slice(0, 5);
+function Table1({ coinData }) {
+  if (!coinData) return;
+  const sortedData = sortDataByPrice(coinData?.data?.coins).slice(0, 5);
+  const router = useRouter();
 
   return (
     <div className="h-fit max-w-lg shadow-lg">
@@ -17,9 +20,12 @@ function Table1() {
         </thead>
         <tbody className="text-center">
           {sortedData.map((coin) => (
-            <tr className="hover:bg-gray-300 cursor-pointer">
+            <tr
+              className="hover:bg-gray-300 cursor-pointer"
+              onClick={() => router.push(`/currency/${coin.uuid}`)}
+            >
               <td className="py-3 px-6 truncate">{coin.symbol}</td>
-              <td className="py-3 px-6">{coin.price}</td>
+              <td className="py-3 px-6">{parseFloat(coin.price).toFixed(3)}</td>
               <td className="py-3 px-6 text-blue-600">{coin.change}%</td>
             </tr>
           ))}

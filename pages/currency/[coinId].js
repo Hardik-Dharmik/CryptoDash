@@ -8,16 +8,9 @@ import { coinInfo } from "../../saved_responses/coinInfo";
 function CoinInfo() {
   const router = useRouter();
   const coinId = router.query.coinId;
-  console.log(coinId);
   const [coinData, setCoinData] = useState(null);
 
   useEffect(() => {
-    const Url =
-      "https://coinranking1.p.rapidapi.com/coin/" +
-      coinId +
-      "?referenceCurrencyUuid=yhjMzLPhuIDl&timePeriod=24h";
-
-    console.log(Url);
     const options = {
       method: "GET",
       headers: {
@@ -32,9 +25,7 @@ function CoinInfo() {
       .then((response) => response.json())
       .then((response) => setCoinData(response))
       .catch((err) => console.error(err));
-
-    // console.log(coinData);
-  });
+  }, []);
 
   if (!coinData) return;
 
